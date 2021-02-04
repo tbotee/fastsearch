@@ -1,0 +1,18 @@
+{
+  "redditUrl": "https://www.reddit.com/search.json?type=&sort=new&limit=20&q=",
+  "elloUrl": "https://ello.co/api/v2/posts?per_page=25&terms=",
+  "abcNewUrl": "https://abcnews.go.com/meta/api/search?limit=10&sort=date&type=&section=&totalrecords=true&offset=0&q=",
+  "cnnUrl": "https://search.api.cnn.io/content?size=10&q=",
+  "buzzFeedUrl": "https://www.buzzfeed.com/search/api?page=1&page_size=50&type=all&q=",
+  "eOnlineUrl": "https://api.queryly.com/v4/search.aspx?queryly_key=6c50a0f8bad14076&initialized=1&endindex=0&batchsize=20&callback=&extendeddatafields=creator&uiversion=1&query=",
+  "settings": {
+    "defaultLoadNr" : 10,
+    "loadMoreNr" : 10
+  },
+  "baseUrl": "http://localhost/fastsearch/",
+  "googleTrendsParser": {
+    "googleTrendsUrl": "https://trends.google.com/trends/trendingsearches/daily/rss?geo=US",
+    "cacheTime": 120,
+    "className": "GoogleTrends"
+  }
+}
