@@ -27,4 +27,12 @@ class Boostrap
         $homeController = new HomeController($this->config);
         $homeController->render();
     }
+
+    public function renderScripts()
+    {
+        if (isset($_SESSION['script']) && $_SESSION['script'] != "")
+        {
+            echo "<script type='text/javascript' src='js/{$_SESSION['script']}'></script>";
+        }
+    }
 }

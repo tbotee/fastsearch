@@ -34,7 +34,7 @@ class ParserBase
 
     public function getCachedItems($term)
     {
-        $fileName = ROOT . '/Cache/' . $this->config->className . '-' . md5($term) .'.json';
+        $fileName = $this->getFileName($term);
         if (file_exists($fileName))
         {
             $obj = json_decode(file_get_contents($fileName));
@@ -56,11 +56,32 @@ class ParserBase
     private function fetchFromServerAndSaveToCache($term, $fileName)
     {
         $items = $this->getItems($term);
+        $this->saveCache($items, $fileName);
+        return $items;
+    }
+
+    public function getCachedIfExist($term)
+    {
+        $fileName = $this->getFileName($term);
+        if (file_exists($fileName))
+        {
+            $obj = json_decode(file_get_contents($fileName));
+            return $obj->expiresAt < time() ? false : $obj->items;
+        } else
+            return false;
+    }
+
+    public function getFileName($term): string
+    {
+        return ROOT . '/Cache/' . $this->config->className . '-' . md5($term) . '.json';
+    }
+
+    public function saveCache($items, $fileName)
+    {
         $saveObject = new class {};
         $saveObject->expiresAt = time() + ($this->config->cacheTime * 60);
         $saveObject->items = $items;
         file_put_contents($fileName, json_encode($saveObject));
-        return $items;
     }
 
 }

@@ -1,5 +1,8 @@
 <?php
 
+include_once 'Lib/Parsers/iParser.php';
+include_once 'Lib/Parsers/ParserBase.php';
+include_once 'Lib/Parsers/GoogleTrends.php';
 
 class HomeController
 {
@@ -36,6 +39,7 @@ class HomeController
         {
             $q = htmlspecialchars($_GET['q']);
             $inputVal = urldecode($q);
+            $_SESSION["script"] = "searchResult.js";
             include 'Views/Home/searchResults.php';
         }
         else

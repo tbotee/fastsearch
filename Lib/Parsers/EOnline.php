@@ -4,15 +4,29 @@
 class EOnline extends ParserBase implements iParser
 {
 
-    public function __construct(Config $setting)
+    public function __construct($parser)
     {
-        $this->url = $setting->eOnlineUrl;
+        $this->url = $parser->url;
+        $this->config = $parser;
     }
 
     public function getItems(string $term)
     {
         $string = parent::getItemsFromSource($term);
         $obj = $this->resultObject($string);
+
+        return $this->getListFromObject($obj);
+    }
+
+    public function getListFromString(string $html)
+    {
+        $obj = $this->resultObject($html);
+
+        return $this->getListFromObject($obj);
+    }
+
+    private function getListFromObject($obj): array
+    {
         $items = array();
 
         foreach ($obj->items as $item)
@@ -21,7 +35,9 @@ class EOnline extends ParserBase implements iParser
                 (string) $item->title,
                 (string) $item->description,
                 (string) $item->link,
-                (string) $item->image
+                (string) $item->image,
+                (string) $item->pubdate,
+                "EOnline"
             );
         }
         return $items;
@@ -34,5 +50,10 @@ class EOnline extends ParserBase implements iParser
             array('\\"', '\''), "\"",
             substr(trim(substr($res, $startsAt, $endsAt - $startsAt)), 0, -3));
         return json_decode($result);
+    }
+
+    public function encode(string $url)
+    {
+        return urlencode(htmlspecialchars($url));
     }
 }

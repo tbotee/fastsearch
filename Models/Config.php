@@ -1,16 +1,13 @@
 <?php
 
-define('ROOT', realpath(dirname(__FILE__) . '/..'));
-
-include_once 'Lib/Parsers/iParser.php';
-include_once 'Lib/Parsers/ParserBase.php';
-include_once 'Lib/Parsers/GoogleTrends.php';
+if( !session_id() ) @session_start();
+$_SESSION['script'] = '';
 
 class Config
 {
     public function __construct() {
         try {
-            $json = json_decode (file_get_contents("config.json"));
+            $json = json_decode (file_get_contents(ROOT . "/config.json"));
             foreach ($json as $key => $value) $this->{$key} = $value;
         } catch (Exception $e)
         {

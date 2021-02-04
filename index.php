@@ -1,9 +1,9 @@
 <?php
 
+define('ROOT', realpath(dirname(__FILE__)));
+
 require_once('Models/Config.php');
 require_once('Lib/Boostrap.php');
-
-
 
 $config = new Config();
 

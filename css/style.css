@@ -1,3 +1,5 @@
+@import "loading.css";
+
 *, ::after, ::before {
     box-sizing: border-box;
 }
@@ -112,6 +114,73 @@ body {
     color: #F15152;
     transform: scale(1.2);
 }
+
+.container-fluid {
+    padding: 0 10px;
+    display: flex;
+}
+
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    width: 100%;
+    padding: 0 5px;
+}
+
+.result-item {
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: flex-start;
+    color: #33364d;
+    text-decoration: none;
+    padding: 0 5px 10px 5px;
+    border-bottom: 1px solid lightgray;
+}
+
+.result-item:hover {
+    color: #F15152;
+}
+
+.result-item img{
+    width: 100%;
+}
+
+.result-item {
+
+    background-position: right 5px bottom +5px;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    padding: 0 5px 15px 5px;
+}
+
+.result-item.reddit {
+    background-image: url("../img/reddit-logo.svg");
+}
+
+.result-item img {
+    width: auto;
+    margin-right: 10px;
+}
+
+.result-item.cnn img,
+.result-item.buzzfeed img,
+.result-item.eonline img {
+    width: 100%;
+    margin: 0 0 10px 0;
+}
+
+.result-item.abcnews {
+    background-image: url("../img/abc-news-logo.svg");
+}
+
+.result-item.cnn,
+.result-item.buzzfeed,
+.result-item.eonline {
+    flex-direction: column;
+}
+
+
 
 @media (max-width: 700px) {
     .trends-container  .trends .trend {

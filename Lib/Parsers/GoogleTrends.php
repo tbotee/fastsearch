@@ -4,7 +4,7 @@
 class GoogleTrends extends ParserBase implements iParser
 {
 
-    public function __construct(Config $setting)
+    public function __construct($setting)
     {
         $this->url = $setting->googleTrendsParser->googleTrendsUrl;
         $this->config = $setting->googleTrendsParser;
