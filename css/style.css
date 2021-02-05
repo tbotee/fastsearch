@@ -56,6 +56,10 @@ body {
     outline: none;
 }
 
+.search-container .filters {
+    margin-left: auto;
+}
+
 .container {
     width: 100%;
     margin-left: auto;
@@ -147,16 +151,13 @@ body {
 }
 
 .result-item {
-
     background-position: right 5px bottom +5px;
     background-repeat: no-repeat;
     background-size: 50px;
     padding: 0 5px 15px 5px;
 }
 
-.result-item.reddit {
-    background-image: url("../img/reddit-logo.svg");
-}
+
 
 .result-item img {
     width: auto;
@@ -170,8 +171,21 @@ body {
     margin: 0 0 10px 0;
 }
 
+.result-item.reddit {
+    background-image: url("../img/reddit-logo.svg");
+}
+
 .result-item.abcnews {
     background-image: url("../img/abc-news-logo.svg");
+}
+
+.result-item.abcnews img {
+    width: 140px;
+}
+
+.result-item.cnn {
+    background-image: url("../img/cnn-logo.svg");
+    background-size: 30px;
 }
 
 .result-item.cnn,
@@ -179,8 +193,6 @@ body {
 .result-item.eonline {
     flex-direction: column;
 }
-
-
 
 @media (max-width: 700px) {
     .trends-container  .trends .trend {

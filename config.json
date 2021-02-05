@@ -19,7 +19,14 @@
     {
       "className": "Reddit",
       "cacheTime": 5,
-      "url": "https://www.reddit.com/search.json?type=&sort=new&limit=60&q=",
+      "url": "https://www.reddit.com/search.json?type=&sort=new&limit=60&include_over_18=false&search_include_over_18=false&q=",
+      "category": "social-media",
+      "enabled": true
+    },
+    {
+      "className": "Twitter",
+      "cacheTime": 5,
+      "url": "https://www.reddit.com/search.json?type=&sort=new&limit=60&include_over_18=false&search_include_over_18=false&q=",
       "category": "social-media",
       "enabled": true
     },

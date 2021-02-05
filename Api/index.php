@@ -30,7 +30,7 @@ if (isset($_GET["category"]) &&
             } else {
                 $toParse[] = $class;
             }
-            //$toParse[] = $class;
+            // $toParse[] = $class;
         }
     }
 

@@ -35,6 +35,23 @@ class HomeController
     private function displayHome()
     {
         $homeUrl = $this->config->baseUrl;
+
+        $socialMediaEnabled = count(array_filter($this->config->parsers, function ($parser) {
+            return $parser->enabled && $parser->category == "social-media";
+        }));
+
+        $newsEnabled = count(array_filter($this->config->parsers, function ($parser) {
+            return $parser->enabled && $parser->category == "news";
+        }));
+
+        $celebritiesEnabled = count(array_filter($this->config->parsers, function ($parser) {
+            return $parser->enabled && $parser->category == "celebrities";
+        }));
+
+        $moviesEnabled = count(array_filter($this->config->parsers, function ($parser) {
+            return $parser->enabled && $parser->category == "movies";
+        }));
+
         if (isset($_GET["q"]))
         {
             $q = htmlspecialchars($_GET['q']);
