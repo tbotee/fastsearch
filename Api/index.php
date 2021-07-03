@@ -53,8 +53,15 @@ if (isset($_GET["category"]) &&
                 CURLOPT_TIMEOUT => 10,
                 CURLOPT_SSL_VERIFYPEER => false,
                 CURLOPT_SSL_VERIFYHOST => false,
-                CURLOPT_USERAGENT => "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36"
+                CURLOPT_USERAGENT => "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36",
+                CURLOPT_HTTPHEADER => array($toParse[$i]->header)
             );
+
+//            if ($toParse[$i]->header != "")
+//            {
+//                $options["CURLOPT_HTTPHEADER"] = $toParse[$i]->header;
+//            }
+
             curl_setopt_array($curl_arr[$i], $options);
             curl_multi_add_handle($master, $curl_arr[$i]);
         }

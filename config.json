@@ -21,12 +21,12 @@
       "cacheTime": 5,
       "url": "https://www.reddit.com/search.json?type=&sort=new&limit=60&include_over_18=false&search_include_over_18=false&q=",
       "category": "social-media",
-      "enabled": true
+      "enabled": false
     },
     {
       "className": "Twitter",
       "cacheTime": 5,
-      "url": "https://www.reddit.com/search.json?type=&sort=new&limit=60&include_over_18=false&search_include_over_18=false&q=",
+      "url": "https://api.twitter.com/2/tweets/search/recent?expansions=attachments.media_keys,author_id,entities.mentions.username&media.fields=preview_image_url,type,url&tweet.fields=attachments,created_at&max_results=10&query=",
       "category": "social-media",
       "enabled": true
     },
@@ -35,28 +35,28 @@
       "cacheTime": 5,
       "url": "https://abcnews.go.com/meta/api/search?limit=30&sort=date&type=&section=&totalrecords=true&offset=0&q=",
       "category": "news",
-      "enabled": true
+      "enabled": false
     },
     {
       "className": "CNN",
       "cacheTime": 5,
       "url": "https://search.api.cnn.io/content?size=10&q=",
       "category": "news",
-      "enabled": true
+      "enabled": false
     },
     {
       "className": "EOnline",
       "cacheTime": 5,
       "url": "https://api.queryly.com/v4/search.aspx?queryly_key=6c50a0f8bad14076&initialized=1&endindex=0&batchsize=13&callback=&extendeddatafields=creator&uiversion=1&query=",
       "category": "celebrities",
-      "enabled": true
+      "enabled": false
     },
     {
       "className": "BuzzFeed",
       "cacheTime": 5,
       "url": "https://www.buzzfeed.com/search/api?page=1&page_size=50&type=all&q=",
       "category": "celebrities",
-      "enabled": true
+      "enabled": false
     },
     {
       "className": "IMDB",

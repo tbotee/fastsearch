@@ -5,6 +5,7 @@ class ParserBase
 {
     public $url = "";
     public $config;
+    public $header = "";
 
     protected function getItemsFromSource($term)
     {

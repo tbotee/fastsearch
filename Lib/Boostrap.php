@@ -19,7 +19,7 @@ class Boostrap
 
     public function renderTitle()
     {
-        echo "Title";
+        echo "Search live from the worlds most ";
     }
 
     public function renderBody()
